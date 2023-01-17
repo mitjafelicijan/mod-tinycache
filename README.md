@@ -56,7 +56,6 @@ docker exec -it CONTAINER_NAME /bin/stat /usr/local/apache2/last.md5.txt
 docker exec -it CONTAINER_NAME /bin/stat /usr/local/apache2/dump.md5.txt
 ```
 
-
 ## Development resources
 
 - [Developer Documentation for the Apache HTTP Server 2.4](https://httpd.apache.org/docs/2.4/developer/)

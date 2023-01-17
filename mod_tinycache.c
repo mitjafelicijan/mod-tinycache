@@ -121,7 +121,7 @@ static void tc_register_hooks(apr_pool_t *pool)
     ap_hook_fixups(tc_handler_last, NULL, NULL, APR_HOOK_LAST);
 }
 
-module AP_MODULE_DECLARE_DATA tiny_cache_module = {
+module AP_MODULE_DECLARE_DATA tinycache_module = {
     STANDARD20_MODULE_STUFF,
     NULL,             /* Per-directory configuration handler */
     NULL,             /* Merge handler for per-directory configurations */
