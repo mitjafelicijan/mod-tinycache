@@ -40,6 +40,10 @@ Files are named based a APR hooks:
 - APR_HOOK_MIDDLE (Is not being used!)
 - APR_HOOK_LAST
 
+Read more about about hooks on [Apache Portable Runtime
+](https://apr.apache.org/docs/apr/trunk/group___a_p_r___util___hook.html)
+website.
+
 ```sh
 # Check contents of the created files.
 docker exec -it CONTAINER_NAME /bin/cat /usr/local/apache2/first.md5.txt
