@@ -26,6 +26,9 @@ sudo dnf install \
 ```sh
 # This will compile the module and save .so file into the .libs subfolder
 # which will be created automatically.
+
+# This will also ran Docker stack with Apache 2 and Memcached.
+# You can find more about this in file `devel.yaml` and `Makefile`.
 make all run
 ```
 
