@@ -1,7 +1,5 @@
 # TinyCache - Apache 2 Module
 
-<img src="https://user-images.githubusercontent.com/296714/212981638-054dd8d2-d3f5-4280-b509-6f301299a414.png" height="200">
-
 ### General intentions with this module
 
 The aim for this project is to provide a simple caching module that taps 
