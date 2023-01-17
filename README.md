@@ -1,5 +1,11 @@
 # TinyCache - Apache 2 Module
 
+<p align="center">
+<img src="https://user-images.githubusercontent.com/296714/212981638-054dd8d2-d3f5-4280-b509-6f301299a414.png" height="200">
+</p>
+
+**General intentions with this module**
+
 The aim for this project is to provide a simple caching module that taps 
 directly into Apache 2. It hooks before and after request and stores raw HTML
 into Memcached Server.
@@ -7,7 +13,7 @@ into Memcached Server.
 Memcached has been chosen due to it's simplicity, but maybe Redis could
 also be added.
 
-**⚠️ This project is still work in progress!**
+**Notice: This project is still work in progress!**
 
 ## Local development
 
