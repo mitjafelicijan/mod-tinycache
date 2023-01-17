@@ -30,5 +30,6 @@ Additional paths provided for Clangd LSP in `compile_flags.txt`.
 
 ## Development resources
 
+- [Developer Documentation for the Apache HTTP Server 2.4](https://httpd.apache.org/docs/2.4/developer/)
 - [Developing modules for the Apache HTTP Server 2.4](https://httpd.apache.org/docs/2.4/developer/modguide.html)
 - [Hook Functions in the Apache HTTP Server 2.x](https://httpd.apache.org/docs/2.4/developer/hooks.html)
