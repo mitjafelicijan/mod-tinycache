@@ -34,6 +34,12 @@ Additional paths provided for Clangd LSP in `compile_flags.txt`.
 After making a first request couple of new files are available in the Docker
 container.
 
+Files are named based a APR hooks:
+
+- APR_HOOK_FIRST
+- APR_HOOK_MIDDLE (Is not being used!)
+- APR_HOOK_LAST
+
 ```sh
 # Check contents of the created files.
 docker exec -it CONTAINER_NAME /bin/cat /usr/local/apache2/first.md5.txt
