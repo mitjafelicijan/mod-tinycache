@@ -29,6 +29,28 @@ make all run
 
 Additional paths provided for Clangd LSP in `compile_flags.txt`.
 
+### Debugging the module
+
+After making a first request couple of new files are available in the Docker
+container.
+
+```sh
+# Check contents of the created files.
+docker exec -it CONTAINER_NAME /bin/cat /usr/local/apache2/first.md5.txt
+docker exec -it CONTAINER_NAME /bin/cat /usr/local/apache2/last.md5.txt
+docker exec -it CONTAINER_NAME /bin/cat /usr/local/apache2/dump.md5.txt
+
+# To check if the MD5 checksum is the same we use `Howdy!` as input string.
+# Results from cat Docker `dump.md5.txt` should be the same.
+echo -n Howdy! | md5sum
+
+# Check file status (created/modified dates).
+docker exec -it CONTAINER_NAME /bin/stat /usr/local/apache2/first.md5.txt
+docker exec -it CONTAINER_NAME /bin/stat /usr/local/apache2/last.md5.txt
+docker exec -it CONTAINER_NAME /bin/stat /usr/local/apache2/dump.md5.txt
+```
+
+
 ## Development resources
 
 - [Developer Documentation for the Apache HTTP Server 2.4](https://httpd.apache.org/docs/2.4/developer/)
