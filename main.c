@@ -1,19 +1,37 @@
 #include <stdio.h>
 
+#include "apr_hooks.h"
 #include "httpd.h"
 
 #include "http_config.h"
 #include "http_request.h"
 
-static int tc_before_request(request_rec *r)
+void write_dump_file(const char *filename, const char *content)
 {
-    printf("Hi Apache 2 Module!\n");
+    FILE *file = fopen(filename, "w");
+    if (file != NULL)
+    {
+        fwrite(content, sizeof(char), strlen(content), file);
+        fclose(file);
+    }
+}
+
+static int tc_handler_first(request_rec *r)
+{
+    write_dump_file("/usr/local/apache2/dump.first.txt", "tc_handle_first::arp_hook_first\n");
+    return OK;
+}
+
+static int tc_handler_last(request_rec *r)
+{
+    write_dump_file("/usr/local/apache2/dump.last.txt", "tc_handle_last::arp_hook_last\n");
     return OK;
 }
 
 static void tc_register_hooks(apr_pool_t *pool)
 {
-    ap_hook_handler(tc_before_request, NULL, NULL, APR_HOOK_FIRST);
+    ap_hook_fixups(tc_handler_first, NULL, NULL, APR_HOOK_FIRST);
+    ap_hook_fixups(tc_handler_last, NULL, NULL, APR_HOOK_LAST);
 }
 
 module AP_MODULE_DECLARE_DATA tiny_cache_module = {
