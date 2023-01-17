@@ -1,6 +1,12 @@
 # TinyCache - Apache 2 Module
 
+<<<<<<< HEAD
 <img src="https://user-images.githubusercontent.com/296714/212981638-054dd8d2-d3f5-4280-b509-6f301299a414.png" height="200">
+=======
+<p align="center">
+<img src="https://user-images.githubusercontent.com/296714/212981638-054dd8d2-d3f5-4280-b509-6f301299a414.png" height="200">
+</p>
+>>>>>>> b6ce894fe141d5c905bb4a54c7131f54e2579bad
 
 **General intentions with this module**
 
