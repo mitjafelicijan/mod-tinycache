@@ -1,10 +1,10 @@
 // clang-format off
 #include <stdio.h>
 #include <openssl/evp.h>
-#include "apr_hooks.h"
 #include "httpd.h"
 #include "http_config.h"
 #include "http_request.h"
+#include "apr_hooks.h"
 // clang-format on
 
 char *md5sum(const char *input_string)
