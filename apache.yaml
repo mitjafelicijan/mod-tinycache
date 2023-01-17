@@ -1,0 +1,8 @@
+version: '3.5'
+
+services:
+  apache2:
+    privileged: true
+    build: .
+    ports:
+      - 8099:80
