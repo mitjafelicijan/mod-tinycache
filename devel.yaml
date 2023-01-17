@@ -6,3 +6,8 @@ services:
     build: .
     ports:
       - 8099:80
+  memcached:
+    privileged: true
+    image: memcached:alpine
+    ports:
+      - 11211:11211

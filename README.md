@@ -17,7 +17,8 @@ also be added.
 This was tested on Fedora 37.
 
 ```sh
-sudo dnf install httpd-devel httpd openssl-devel
+sudo dnf install \
+  httpd-devel httpd openssl-devel libmemcached-awesome-devel
 ```
 
 ```sh
