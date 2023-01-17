@@ -17,7 +17,7 @@ also be added.
 This was tested on Fedora 37.
 
 ```sh
-sudo dnf install httpd-devel httpd
+sudo dnf install httpd-devel httpd openssl-devel
 ```
 
 ```sh

@@ -1,10 +1,36 @@
+// clang-format off
 #include <stdio.h>
-
+#include <openssl/evp.h>
 #include "apr_hooks.h"
 #include "httpd.h"
-
 #include "http_config.h"
 #include "http_request.h"
+// clang-format on
+
+char *md5sum(const char *input_string)
+{
+    EVP_MD_CTX *mdctx;
+    const EVP_MD *md;
+    unsigned int md_len;
+    unsigned char digest[EVP_MAX_MD_SIZE];
+
+    // Generate MD5 digest of input string.
+    md = EVP_md5();
+    mdctx = EVP_MD_CTX_new();
+    EVP_DigestInit_ex(mdctx, md, NULL);
+    EVP_DigestUpdate(mdctx, input_string, strlen(input_string));
+    EVP_DigestFinal_ex(mdctx, digest, &md_len);
+    EVP_MD_CTX_free(mdctx);
+
+    // Convert to characters.
+    static char md5hex[33];
+    for (int i = 0; i < 16; ++i)
+    {
+        sprintf(&md5hex[i * 2], "%02x", (unsigned int)digest[i]);
+    }
+
+    return md5hex;
+}
 
 void write_dump_file(const char *filename, const char *content)
 {
@@ -18,7 +44,10 @@ void write_dump_file(const char *filename, const char *content)
 
 static int tc_handler_first(request_rec *r)
 {
+    char *md5hex = md5sum("Howdy!");
+
     write_dump_file("/usr/local/apache2/dump.first.txt", "tc_handle_first::arp_hook_first\n");
+    write_dump_file("/usr/local/apache2/dump.md5.txt", md5hex);
     return OK;
 }
 

@@ -1,7 +1,7 @@
 all: mod_tinycache.so
 
 mod_tinycache.so: main.c
-	apxs -c -o mod_tiny_cache.so main.c
+	apxs -c -o mod_tiny_cache.so main.c -lcrypto
 
 clean:
 	rm -Rf *.lo *.slo *.la .libs/
