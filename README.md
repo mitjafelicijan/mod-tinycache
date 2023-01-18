@@ -71,5 +71,6 @@ docker exec -it CONTAINER_NAME /bin/stat /usr/local/apache2/dump.md5.txt
 - [Developing Modules for the Apache 2.4](https://httpd.apache.org/docs/2.4/developer/modguide.html)
 - [Hook Functions in the Apache 2.4](https://httpd.apache.org/docs/2.4/developer/hooks.html)
 - [Basic Apache 2 Module Examples](https://people.apache.org/~humbedooh/mods/examples/)
-- [Memcached Tutotial and Examples](https://www.tutorialspoint.com/memcached/)
+- [Memcached Tutorial and Examples](https://www.tutorialspoint.com/memcached/)
 - [Request Processing in Apache](http://www.apachetutor.org/dev/request)
+- [Example of Built-in Apache Modules](https://github.com/apache/httpd/tree/trunk/modules/cache)
