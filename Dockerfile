@@ -14,6 +14,7 @@ RUN apk add --no-cache libmemcached-libs libmemcached-dev
 # Copy Apache2 module and some testing files.
 COPY .libs/mod_tinycache.so ${AP_MODULE_DIR}/mod_tinycache.so
 COPY info.php ${DOCUMENT_ROOT}/info.php
+COPY long.php ${DOCUMENT_ROOT}/long.php
 
 # Load Apache module by adding `LoadModule` directive to config file.
 RUN echo "LoadModule tinycache_module ${AP_MODULE_DIR}/mod_tinycache.so" >> ${AP_CONFIG_FILE}
